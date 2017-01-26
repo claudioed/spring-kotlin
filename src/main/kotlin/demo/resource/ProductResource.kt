@@ -1,6 +1,7 @@
 package demo.resource
 
 import demo.entity.Product
+import demo.entity.ProductModel
 import demo.repository.ProductRepository
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
@@ -21,6 +22,6 @@ class ProductResource(val productRepository: ProductRepository) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun add(@RequestBody request: Product) = productRepository.save(request)
+    fun add(@RequestBody request: Product) = productRepository.save(request.let { ProductModel(request.name,request.description) })
 
 }

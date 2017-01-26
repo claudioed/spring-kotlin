@@ -1,6 +1,6 @@
 package demo.repository
 
-import demo.entity.Product
+import demo.entity.ProductModel
 import org.springframework.data.repository.CrudRepository
 
 /**
@@ -9,4 +9,4 @@ import org.springframework.data.repository.CrudRepository
  * @email claudioed.oliveira@gmail.com
  * Project spring-kotlin
  */
-interface ProductRepository : CrudRepository<Product,String>
+interface ProductRepository : CrudRepository<ProductModel,String>
